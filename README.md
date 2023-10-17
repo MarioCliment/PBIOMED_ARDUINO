@@ -20,7 +20,7 @@ Este repositorio corresponde a la parte de Arduino del proyecto 3A (Biometría y
 
 - `ServicioEnEmisora.h`: Biblioteca que define un servicio específico en la emisora.
 
-## Placa SparkFun Pro nRF52840 Mini
+## Placa Arduino
 
 Antes de cargar y ejecutar el programa de Arduino, asegúrate de tener una placa SparkFun Pro nRF52840 Mini. Puedes encontrar más información sobre esta placa en la [página oficial de SparkFun Pro nRF52840 Mini](https://www.sparkfun.com/products/15025).
 
@@ -32,17 +32,19 @@ Antes de cargar y ejecutar el programa de Arduino, asegúrate de tener los sigui
 
 ## Cómo Utilizar el Proyecto
 
-1. Abre el archivo `Emison_Datos_Arduino.ino` en el Arduino IDE.
+1. Descarga la carpeta `Emision_Datos_Arduino` desde este repositorio que se encuentra dentro de src.
 
-2. Conecta tu placa SparkFun Pro nRF52840 Mini a tu ordenador a través de un cable USB.
+2. Abre el archivo `Emison_Datos_Arduino.ino` en el Arduino IDE.
 
-3. Selecciona el modelo de tu placa Arduino en el Arduino IDE desde la pestaña "Herramientas".
+3. Conecta tu placa SparkFun Pro nRF52840 Mini a tu ordenador a través de un cable USB.
 
-4. Compila el código haciendo clic en el botón de verificación.
+4. Selecciona el modelo de tu placa Arduino en el Arduino IDE desde la pestaña "Herramientas".
 
-5. Carga el programa en tu placa Arduino haciendo clic en el botón de carga.
+5. Compila el código haciendo clic en el botón de verificación.
 
-6. Observa la salida del programa en el monitor serie del Arduino IDE para depuración.
+6. Carga el programa en tu placa Arduino haciendo clic en el botón de carga.
+
+7. Observa la salida del programa en el monitor serie del Arduino IDE para depuración.
 
 ## Autor
 
