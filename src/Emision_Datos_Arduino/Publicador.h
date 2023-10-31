@@ -45,13 +45,6 @@ public:
 
   // ............................................................
   // ............................................................
-  enum MedicionesID  {
-	CO2 = 11,
-	TEMPERATURA = 12,
-  };
-
-  // ............................................................
-  // ............................................................
   Publicador( ) {
 	// ATENCION: no hacerlo aquí. (*this).laEmisora.encenderEmisora();
 	// Pondremos un método para llamarlo desde el setup() más tarde
@@ -65,58 +58,22 @@ public:
 
   // ............................................................
   // ............................................................
-  void publicarCO2( int16_t valorCO2, uint8_t contador,
-					long tiempoEspera ) {
-
-	//
-	// 1. empezamos anuncio
-	//
-  uint16_t major = MedicionesID::CO2;
-	
-	(*this).laEmisora.emitirAnuncioIBeacon( (*this).beaconUUID, 
-											major,
-											valorCO2, // minor
-											(*this).RSSI // rssi
-									);
-
-	Globales::elPuerto.escribir( "   publicarCO2():" );
-	Globales::elPuerto.escribir( "   valor (minor)=" );
-	Globales::elPuerto.escribir( valorCO2 );
-	Globales::elPuerto.escribir( "   contador=" );
-	Globales::elPuerto.escribir( contador );
-	Globales::elPuerto.escribir( "  ID (major)="  );
-	Globales::elPuerto.escribir( major );
-	Globales::elPuerto.escribir( "\n" );
-	
-
-	//
-	// 2. esperamos el tiempo que nos digan
-	//
-	esperar( tiempoEspera );
-	//
-	// 3. paramos anuncio
-	//
-	(*this).laEmisora.detenerAnuncio();
-  } // ()
-
-  // ............................................................
-  // ............................................................
-  void publicarTemperatura( int16_t valorTemperatura,
+  void publicarMedicion( float valorMedicion, uint16_t idMedicion,
 							uint8_t contador, long tiempoEspera ) {
 
   //
 	// 1. empezamos anuncio
 	//
-  uint16_t major = MedicionesID::TEMPERATURA;
+  uint16_t major = idMedicion;
 	(*this).laEmisora.emitirAnuncioIBeacon( (*this).beaconUUID, 
 											major,
-											valorTemperatura, // minor
+											valorMedicion, // minor
 											(*this).RSSI // rssi
 									);
 
-  Globales::elPuerto.escribir( "   publicarTemeperatura():" );                
+  Globales::elPuerto.escribir( "   publicarMedicion():" );                
   Globales::elPuerto.escribir( "   valor (minor)=" );
-	Globales::elPuerto.escribir( valorTemperatura );
+	Globales::elPuerto.escribir( valorMedicion );
 	Globales::elPuerto.escribir( "   contador=" );
 	Globales::elPuerto.escribir( contador );
 	Globales::elPuerto.escribir( "   ID (major)=="  );
