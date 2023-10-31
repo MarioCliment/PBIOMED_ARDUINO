@@ -20,10 +20,10 @@ private:
 
 //Definir pines
 enum PINES{
-  gasPin = 5;
-  refPin = 28;
-  tempPin = 29;
-} // enum
+  gasPin = 5,
+  refPin = 28,
+  tempPin = 29,
+}; // enum
 
 //Funcion para normalizar valores
 // .....................................................
@@ -97,7 +97,7 @@ public:
     float vTempN = normalizar(vTemp);
 
     //Calcular la temperatura detectada por el sensor con la ecuacion del datasheet
-    float temperatura = calcularTemperatura(vTempN)
+    float temperatura = calcularTemperatura(vTempN);
 
     return temperatura;
   } // ()
