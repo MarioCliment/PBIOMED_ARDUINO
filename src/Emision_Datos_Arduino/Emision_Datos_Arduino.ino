@@ -41,6 +41,11 @@ namespace Globales {
 
 }; // namespace
 
+enum MedicionesID  {
+	OZONO = 11,
+	TEMPERATURA = 12,
+};
+
 // --------------------------------------------------------------
 // setup()
 // --------------------------------------------------------------
@@ -84,22 +89,23 @@ void loop () {
   // 
   // mido y publico
   // 
-  int valorCO2 = elMedidor.medirCO2();
-  
-  elPublicador.publicarCO2( valorCO2,
-							cont,
-							2000 // intervalo de emisión
-							);
-  
+  int valorOzono = elMedidor.medirOzono();
+  elPuerto.escribir( "-publicarMedicion(): OZONO" );
+  elPublicador.publicarMedicion(valorOzono, 
+                                MedicionesID::OZONO,// utilizamos la ID del parametro correspondiente
+                                cont, 
+                                2000 // intervalo de emisión
+                                );
   // 
   // mido y publico
   // 
   int valorTemperatura = elMedidor.medirTemperatura();
-  
-  elPublicador.publicarTemperatura( valorTemperatura, 
-									cont,
-									2000 // intervalo de emisión
-									);
+  elPuerto.escribir( "-publicarMedicion(): TEMPERATURA" );
+  elPublicador.publicarMedicion(valorTemperatura, 
+                                MedicionesID::TEMPERATURA,// utilizamos la ID del parametro correspondiente
+                                cont, 
+                                2000 // intervalo de emisión
+                                );
 
   esperar( 2000 );
 
