@@ -44,6 +44,7 @@ public:
 public:
 
   // ............................................................
+  // constructor()
   // ............................................................
   Publicador( ) {
 	// ATENCION: no hacerlo aquí. (*this).laEmisora.encenderEmisora();
@@ -51,12 +52,15 @@ public:
   } // ()
 
   // ............................................................
+  // encenderEmisora()
   // ............................................................
   void encenderEmisora() {
 	(*this).laEmisora.encenderEmisora();
   } // ()
 
   // ............................................................
+  // float valorMedicion, uint16_t idMedicion, --> publicarMedicion() 
+  //  uint8_t contador, long tiempoEspera 
   // ............................................................
   void publicarMedicion( float valorMedicion, uint16_t idMedicion,
 							uint8_t contador, long tiempoEspera ) {
